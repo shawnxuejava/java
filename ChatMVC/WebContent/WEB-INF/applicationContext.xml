@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p"  
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd 
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/aop 
+	    http://www.springframework.org/schema/aop/spring-aop.xsd
+	    http://www.springframework.org/schema/websocket
+    	http://www.springframework.org/schema/websocket/spring-websocket.xsd">
+
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:annotation-driven />
+	<context:annotation-config/>
+	<context:component-scan base-package="com.fdmgroup.controller" />
+        
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+	<bean id="dbConnection" class ="com.fdmgroup.dao.DbConnection" init-method="init"> </bean>
+	<bean id = "app" class="com.fdmgroup.app.App" />
+	<bean id= "userDao" class ="com.fdmgroup.dao.UserJpaDao"></bean>
+	<bean id= "roleDao" class ="com.fdmgroup.dao.RoleJpaDao"></bean>
+	<bean id= "roomDao" class ="com.fdmgroup.dao.RoomJpaDao"></bean>
+	<bean id= "chatDao" class ="com.fdmgroup.dao.ChatJpaDao"></bean>
+	
+	
+<!-- 	<websocket:message-broker application-destination-prefix="/wsApp"> -->
+<!--         <websocket:stomp-endpoint path="/add"> -->
+<!--             <websocket:sockjs/> -->
+<!--         </websocket:stomp-endpoint> -->
+<!--         <websocket:stomp-endpoint path="/chat"> -->
+<!--             <websocket:sockjs/> -->
+<!--         </websocket:stomp-endpoint> -->
+<!--         <websocket:stomp-endpoint path="/notification"> -->
+<!--             <websocket:sockjs/> -->
+<!--         </websocket:stomp-endpoint> -->
+<!--         <websocket:simple-broker prefix="/topic"/> -->
+<!--     </websocket:message-broker> -->
+	
+		
+</beans>
