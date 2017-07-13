@@ -32,7 +32,7 @@ public class Message implements IStorable {
 	private User author;
 	
 	@ManyToOne
-	@JsonIgnore
+	//@JsonIgnore
 	private Chat chat;
 
 	public Message() {
