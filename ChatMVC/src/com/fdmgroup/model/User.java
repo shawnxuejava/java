@@ -68,15 +68,15 @@ public class User implements IStorable{
 	private Role role;
 	
 	@OneToMany(mappedBy="owner")
-	//@JsonIgnore
+	@JsonIgnore
 	private List<Room> roomsOwned;
 	
 	@ManyToMany(mappedBy="usersInvited")
-	//@JsonIgnore
+	@JsonIgnore
 	private List<Room> roomsInvited;
 	
 	@OneToMany(mappedBy="author")
-	//@JsonIgnore
+	@JsonIgnore
 	private List<Message> messages;
 
 	public User() {
