@@ -21,6 +21,8 @@
 
 	 <h1>rooms owned</h1>
 	 
+	 
+	 
 	 <table>
 	 <c:forEach items="${user.roomsOwned}" var="roomOwned">
 					<tr>

@@ -12,6 +12,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="C_MESSAGE")
 public class Message implements IStorable {
@@ -30,6 +32,7 @@ public class Message implements IStorable {
 	private User author;
 	
 	@ManyToOne
+	@JsonIgnore
 	private Chat chat;
 
 	public Message() {
@@ -37,7 +40,7 @@ public class Message implements IStorable {
 	}
 
 	public Message(String content, Calendar timeStamp) {
-		super();
+		this();
 		this.content = content;
 		this.timeStamp = timeStamp;
 	}
@@ -106,8 +109,10 @@ public class Message implements IStorable {
 
 	@Override
 	public String toString() {
-		return "Message [id=" + id + ", content=" + content + ", timeStamp=" + timeStamp + ", author=" + author + "]";
+		return "Message [id=" + id + ", content=" + content + ", timeStamp=" + timeStamp + "]";
 	}
+
+
 	
 	
 	

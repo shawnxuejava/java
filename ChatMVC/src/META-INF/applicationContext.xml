@@ -40,5 +40,10 @@
 	<bean id= "chatDao" class ="com.fdmgroup.dao.ChatJpaDao"></bean>
 	
 	
+	
+	
+	
+	
+	
 		
 </beans>

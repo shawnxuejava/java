@@ -43,18 +43,38 @@
 	<bean id= "chatDao" class ="com.fdmgroup.dao.ChatJpaDao"></bean>
 	
 	
-<!-- 	<websocket:message-broker application-destination-prefix="/wsApp"> -->
-<!--         <websocket:stomp-endpoint path="/add"> -->
-<!--             <websocket:sockjs/> -->
-<!--         </websocket:stomp-endpoint> -->
-<!--         <websocket:stomp-endpoint path="/chat"> -->
-<!--             <websocket:sockjs/> -->
-<!--         </websocket:stomp-endpoint> -->
-<!--         <websocket:stomp-endpoint path="/notification"> -->
-<!--             <websocket:sockjs/> -->
-<!--         </websocket:stomp-endpoint> -->
-<!--         <websocket:simple-broker prefix="/topic"/> -->
-<!--     </websocket:message-broker> -->
+
+
+
+	
+
+	
+	<websocket:message-broker application-destination-prefix="/wsApp">
+        <websocket:stomp-endpoint path="/add">
+            <websocket:sockjs/>
+        </websocket:stomp-endpoint>
+        <websocket:stomp-endpoint path="/chat">
+            <websocket:sockjs/>
+        </websocket:stomp-endpoint>
+        <websocket:stomp-endpoint path="/notification">
+            <websocket:sockjs/>
+        </websocket:stomp-endpoint>
+        
+        <websocket:simple-broker prefix="/topic"/>
+    </websocket:message-broker>
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 		
 </beans>

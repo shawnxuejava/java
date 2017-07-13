@@ -24,7 +24,6 @@
 		<sf:password path="password" />
 		<br />
 		<input type="submit" value="Login">
-
 	</sf:form>
 
 	

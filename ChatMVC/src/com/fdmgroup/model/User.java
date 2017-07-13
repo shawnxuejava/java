@@ -22,6 +22,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name ="C_USER")
 @NamedQueries({ @NamedQuery(name = "user.findAll", query = "SELECT u FROM User u"),
@@ -66,12 +68,15 @@ public class User implements IStorable{
 	private Role role;
 	
 	@OneToMany(mappedBy="owner")
+	@JsonIgnore
 	private List<Room> roomsOwned;
 	
 	@ManyToMany(mappedBy="usersInvited")
+	@JsonIgnore
 	private List<Room> roomsInvited;
 	
 	@OneToMany(mappedBy="author")
+	@JsonIgnore
 	private List<Message> messages;
 
 	public User() {
@@ -199,6 +204,8 @@ public class User implements IStorable{
 	public void setMessages(List<Message> messages) {
 		this.messages = messages;
 	}
+
+
 
 	@Override
 	public String toString() {
