@@ -105,5 +105,25 @@ public class ChatController {
 	
 	
 	
+	
+	@MessageMapping("/draw/{id}")
+	@SendTo("/topic/showDraw/{id}") 
+	//public String doDraw(@DestinationVariable int id, @RequestBody Map<String, String> msg) throws InterruptedException {
+		public String doDraw(@DestinationVariable int id, @RequestBody String msg) throws InterruptedException {
+		
+		System.out.println(msg);
+	
+		
+		
+		//String temp = " {\"objects\":[ " + msg + "]} ";
+		//return temp;
+		
+		return msg;
+		
+	}
+	
+	
+	
+	
 
 }

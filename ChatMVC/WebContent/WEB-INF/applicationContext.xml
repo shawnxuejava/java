@@ -53,10 +53,13 @@
         <websocket:stomp-endpoint path="/add">
             <websocket:sockjs/>
         </websocket:stomp-endpoint>
-        <websocket:stomp-endpoint path="/chat">
+        <websocket:stomp-endpoint path="/notification">
             <websocket:sockjs/>
         </websocket:stomp-endpoint>
-        <websocket:stomp-endpoint path="/notification">
+         <websocket:stomp-endpoint path="/draw">
+            <websocket:sockjs/>
+        </websocket:stomp-endpoint>
+        <websocket:stomp-endpoint path="/chat">
             <websocket:sockjs/>
         </websocket:stomp-endpoint>
         
